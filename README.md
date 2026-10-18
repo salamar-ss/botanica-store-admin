@@ -2,7 +2,7 @@
 
 A modern, responsive admin dashboard for an online store, built with React and TypeScript. This portfolio project demonstrates modern frontend architecture, API integration, data management, form validation, and testing.
 
-**Live Demo:** `ADD_VERCEL_URL`  
+**Live Demo:** https://botanica-store-admin.vercel.app/ 
 **Repository:** https://github.com/salamar-ss/botanica-store-admin
 
 ## Overview
