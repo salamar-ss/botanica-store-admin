@@ -1,0 +1,29 @@
+@use 'sass:list';
+
+$status-colors: (
+	'payment-paid': (#e3eee5, #3f6847),
+	'payment-pending': (#fbf0d8, #805d19),
+	'payment-refunded': (#f3e5e2, #8a4d43),
+	'fulfillment-pending': (#fbf0d8, #805d19),
+	'fulfillment-processing': (#e8ece3, #46563d),
+	'fulfillment-shipped': (#e5eff0, #356065),
+	'fulfillment-delivered': (#e3eee5, #3f6847),
+	'fulfillment-cancelled': (#f3e5e2, #8a4d43),
+);
+
+.order-status-badge {
+	display: inline-flex;
+	align-items: center;
+	min-height: 24px;
+	padding: 0 9px;
+	border-radius: 4px;
+	font-size: 11px;
+	font-weight: 600;
+
+	@each $name, $colors in $status-colors {
+		&--#{$name} {
+			background: list.nth($colors, 1);
+			color: list.nth($colors, 2);
+		}
+	}
+}

@@ -1,0 +1,44 @@
+$access-denied-ink: #2d3b31;
+$access-denied-muted: #777970;
+$access-denied-sage: #718260;
+
+.access-denied-page {
+	flex: 1;
+	display: grid;
+	align-content: center;
+	justify-items: start;
+	gap: 12px;
+	padding: 40px;
+	color: $access-denied-ink;
+	font-family: 'Trebuchet MS', sans-serif;
+
+	&__title {
+		margin: 0;
+		font-size: 22px;
+		font-weight: 600;
+	}
+
+	&__message {
+		margin: 0;
+		color: $access-denied-muted;
+		font-size: 14px;
+		line-height: 1.5;
+	}
+
+	&__link {
+		margin-top: 6px;
+		color: $access-denied-sage;
+		font-size: 13px;
+		font-weight: 600;
+		text-underline-offset: 3px;
+
+		&:focus-visible {
+			outline: 2px solid $access-denied-sage;
+			outline-offset: 3px;
+		}
+	}
+
+	@media (max-width: 560px) {
+		padding: 28px 20px;
+	}
+}

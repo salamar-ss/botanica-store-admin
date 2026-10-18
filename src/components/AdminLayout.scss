@@ -1,0 +1,313 @@
+$admin-ivory: #f5f4ed;
+$admin-white: #fff;
+$admin-sage: #718260;
+$admin-sage-soft: #e8ece3;
+$admin-ink: #2d3b31;
+$admin-muted: #777970;
+$admin-border: #e9e9e2;
+
+.admin-layout {
+	min-height: 100vh;
+	min-height: 100svh;
+	display: grid;
+	grid-template-columns: 248px minmax(0, 1fr);
+	background: $admin-white;
+	color: $admin-ink;
+	font-family: 'Trebuchet MS', sans-serif;
+
+	&__sidebar {
+		min-width: 0;
+		display: flex;
+		flex-direction: column;
+		padding: 30px 18px 22px;
+		background: $admin-ivory;
+		border-right: 1px solid $admin-border;
+	}
+
+	&__brand {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		margin: 0 10px 54px;
+		color: $admin-ink;
+		text-decoration: none;
+
+		&:focus-visible {
+			outline: 2px solid $admin-sage;
+			outline-offset: 4px;
+		}
+	}
+
+	&__menu-toggle {
+		display: none;
+		width: 40px;
+		height: 40px;
+		flex: 0 0 auto;
+		place-items: center;
+		padding: 0;
+		border: 1px solid $admin-border;
+		border-radius: 7px;
+		background: $admin-white;
+		color: $admin-ink;
+		cursor: pointer;
+
+		svg {
+			width: 20px;
+			height: 20px;
+			fill: none;
+			stroke: currentColor;
+			stroke-linecap: round;
+			stroke-width: 1.8;
+		}
+
+		&:focus-visible {
+			outline: 2px solid $admin-sage;
+			outline-offset: 2px;
+		}
+	}
+
+	&__brand-mark {
+		width: 34px;
+		height: 34px;
+		flex: 0 0 auto;
+		display: grid;
+		place-items: center;
+		border-radius: 10px;
+		background: $admin-sage;
+
+		svg {
+			width: 22px;
+			height: 22px;
+			stroke: $admin-white;
+			stroke-linecap: round;
+			stroke-linejoin: round;
+			stroke-width: 1.5;
+		}
+	}
+
+	&__brand-name {
+		font-family: Georgia, 'Times New Roman', serif;
+		font-size: 21px;
+		line-height: 1;
+	}
+
+	&__brand-label {
+		align-self: flex-end;
+		margin: 0 0 1px -5px;
+		color: $admin-muted;
+		font-size: 8px;
+		font-weight: 600;
+		letter-spacing: 0.08em;
+	}
+
+	&__navigation-list {
+		display: grid;
+		gap: 5px;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	&__navigation-link {
+		min-height: 44px;
+		display: flex;
+		align-items: center;
+		padding: 0 14px;
+		border-radius: 7px;
+		color: $admin-muted;
+		font-size: 14px;
+		text-decoration: none;
+		transition: background-color 150ms ease, color 150ms ease;
+
+		&:hover {
+			background: rgba($admin-sage, 0.08);
+			color: $admin-ink;
+		}
+
+		&:focus-visible {
+			outline: 2px solid $admin-sage;
+			outline-offset: 2px;
+		}
+
+		&--active {
+			background: $admin-sage-soft;
+			color: $admin-ink;
+			font-weight: 600;
+		}
+	}
+
+	&__workspace {
+		min-width: 0;
+		min-height: 100vh;
+		min-height: 100svh;
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__header {
+		min-height: 84px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 24px;
+		padding: 16px 40px;
+		border-bottom: 1px solid $admin-border;
+		background: $admin-white;
+	}
+
+	&__page-title {
+		margin: 0;
+		font-size: 22px;
+		font-weight: 600;
+		line-height: 1.2;
+	}
+
+	&__header-actions {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+	}
+
+	&__profile {
+		display: flex;
+		align-items: center;
+		gap: 11px;
+		border-radius: 6px;
+		color: inherit;
+		text-decoration: none;
+
+		&:hover .admin-layout__profile-name {
+			color: $admin-sage;
+		}
+
+		&:focus-visible {
+			outline: 2px solid $admin-sage;
+			outline-offset: 4px;
+		}
+	}
+
+	&__avatar {
+		width: 38px;
+		height: 38px;
+		flex: 0 0 auto;
+		display: grid;
+		place-items: center;
+		border-radius: 50%;
+		background: $admin-sage-soft;
+		color: $admin-ink;
+		font-size: 12px;
+		font-weight: 600;
+	}
+
+	&__profile-details {
+		display: grid;
+		gap: 3px;
+	}
+
+	&__profile-name {
+		font-size: 13px;
+		font-weight: 600;
+		line-height: 1.2;
+	}
+
+	&__profile-role {
+		color: $admin-muted;
+		font-size: 11px;
+		line-height: 1.2;
+	}
+
+	&__logout {
+		min-height: 36px;
+		padding: 0 10px;
+		border: 1px solid $admin-border;
+		border-radius: 5px;
+		background: $admin-white;
+		color: $admin-ink;
+		font: inherit;
+		font-size: 12px;
+		font-weight: 600;
+		cursor: pointer;
+
+		&:hover { background: $admin-ivory; }
+		&:focus-visible {
+			outline: 2px solid $admin-sage;
+			outline-offset: 2px;
+		}
+	}
+
+	&__content {
+		min-height: 0;
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		background: $admin-white;
+	}
+
+	@media (max-width: 760px) {
+		grid-template-columns: minmax(0, 1fr);
+		grid-template-rows: auto minmax(0, 1fr);
+
+		&__sidebar {
+			padding: 14px 18px;
+			border-right: 0;
+			border-bottom: 1px solid $admin-border;
+		}
+
+		&__sidebar-header {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 16px;
+		}
+
+		&__brand {
+			min-width: 0;
+			margin: 0;
+		}
+
+		&__menu-toggle {
+			display: grid;
+		}
+
+		&__navigation {
+			display: none;
+			margin-top: 12px;
+		}
+
+		&__sidebar--open &__navigation {
+			display: block;
+		}
+
+		&__navigation-link {
+			min-height: 40px;
+			padding: 0 12px;
+		}
+
+		&__workspace {
+			min-height: 0;
+		}
+
+		&__header {
+			min-height: 72px;
+			padding: 14px 22px;
+		}
+	}
+
+	@media (max-width: 440px) {
+		&__header {
+			padding: 14px 16px;
+		}
+
+		&__header-actions {
+			gap: 8px;
+		}
+
+		&__logout {
+			padding: 0 8px;
+		}
+
+		&__profile-details {
+			display: none;
+		}
+	}
+}

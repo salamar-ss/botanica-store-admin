@@ -1,0 +1,110 @@
+$status-control-ink: #2d3b31;
+$status-control-muted: #777970;
+$status-control-sage: #718260;
+$status-control-border: #e9e9e2;
+$status-control-soft: #f7f7f3;
+
+.order-status-control {
+	padding: 18px 0;
+	border-top: 1px solid $status-control-border;
+	color: $status-control-ink;
+	font-family: 'Trebuchet MS', sans-serif;
+
+	&__title {
+		margin: 0 0 7px;
+		font-size: 14px;
+		font-weight: 600;
+	}
+
+	&__notice {
+		margin: 0 0 14px;
+		color: $status-control-muted;
+		font-size: 12px;
+		line-height: 1.5;
+	}
+
+	&__actions {
+		display: flex;
+		align-items: flex-end;
+		gap: 10px;
+	}
+
+	&__field {
+		width: min(100%, 280px);
+		display: grid;
+		gap: 6px;
+	}
+
+	&__label {
+		color: $status-control-muted;
+		font-size: 11px;
+		font-weight: 600;
+	}
+
+	&__select {
+		width: 100%;
+		min-width: 0;
+		height: 40px;
+		padding: 0 10px;
+		border: 1px solid $status-control-border;
+		border-radius: 5px;
+		background: #fff;
+		color: $status-control-ink;
+		font: inherit;
+		font-size: 13px;
+
+		&:focus-visible {
+			outline: 2px solid $status-control-sage;
+			outline-offset: 1px;
+		}
+	}
+
+	&__submit {
+		min-height: 40px;
+		padding: 0 14px;
+		border: 0;
+		border-radius: 5px;
+		background: $status-control-sage;
+		color: #fff;
+		font: inherit;
+		font-size: 12px;
+		font-weight: 600;
+		cursor: pointer;
+
+		&:hover:not(:disabled) {
+			background: #5f6e50;
+		}
+
+		&:focus-visible {
+			outline: 2px solid $status-control-ink;
+			outline-offset: 2px;
+		}
+
+		&:disabled {
+			background: #a1aa96;
+			cursor: not-allowed;
+		}
+	}
+
+	&__message {
+		margin: 12px 0 0;
+		color: $status-control-muted;
+		font-size: 12px;
+		line-height: 1.5;
+	}
+
+	&__message--error {
+		color: #8a4d43;
+	}
+
+	@media (max-width: 480px) {
+		&__actions {
+			align-items: stretch;
+			flex-direction: column;
+		}
+
+		&__field {
+			width: 100%;
+		}
+	}
+}

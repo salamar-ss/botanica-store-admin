@@ -1,0 +1,41 @@
+.placeholder-page {
+	flex: 1;
+	display: grid;
+	align-content: center;
+	justify-items: start;
+	gap: 12px;
+	padding: 40px;
+
+	&__title {
+		margin: 0;
+		color: #2d3b31;
+		font-size: 24px;
+		font-weight: 600;
+		line-height: 1.2;
+	}
+
+	&__message {
+		margin: 0;
+		color: #777970;
+		font-size: 14px;
+		line-height: 1.5;
+	}
+
+	&__action {
+		margin-top: 8px;
+		color: #536348;
+		font-size: 14px;
+		font-weight: 600;
+		text-decoration-thickness: 1px;
+		text-underline-offset: 3px;
+
+		&:focus-visible {
+			outline: 2px solid #718260;
+			outline-offset: 4px;
+		}
+	}
+
+	@media (max-width: 560px) {
+		padding: 28px 20px;
+	}
+}
